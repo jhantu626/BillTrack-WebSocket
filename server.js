@@ -40,7 +40,6 @@ app.get("/logout", (req, res) => {
 app.post("/logout", (req, res) => {
   const { roomId, devices } = req.body;
   io.to(roomId).emit("logout", devices);
-  console.log("user logout", roomId,"devices",devices);
   res.json({ message: "logout", status: true });
 });
 
